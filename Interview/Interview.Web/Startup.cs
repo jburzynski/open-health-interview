@@ -28,6 +28,7 @@ namespace Interview.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddHttpClient();
 
             // Sets up the basic configuration that for integrating Simple Injector with
             // ASP.NET Core by setting the DefaultScopedLifestyle, and setting up auto

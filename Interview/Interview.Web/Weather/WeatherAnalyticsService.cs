@@ -7,13 +7,6 @@ namespace Interview.Web.Weather
 {
     public class WeatherAnalyticsService : IWeatherAnalyticsService
     {
-        private IWeatherDataService _weatherDataService;
-
-        public WeatherAnalyticsService(IWeatherDataService weatherDataService)
-        {
-            _weatherDataService = weatherDataService;
-        }
-
         public IEnumerable<DailyWeather> GetDailyWeather(IEnumerable<WeatherPointDto> points, int dayLimit) =>
             points.GroupBy(x => x.DateTime.Date)
                 .Take(dayLimit)

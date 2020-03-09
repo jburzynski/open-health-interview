@@ -1,4 +1,5 @@
-﻿using Interview.Web.Weather;
+﻿using System.Net.Http;
+using Interview.Web.Weather;
 using SimpleInjector;
 
 namespace Interview.Web.DependencyInjection
