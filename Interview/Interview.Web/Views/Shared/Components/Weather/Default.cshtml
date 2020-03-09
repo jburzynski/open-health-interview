@@ -1,0 +1,28 @@
+﻿@using Interview.Web.Weather.Models;
+
+@model IEnumerable<DailyWeather>
+
+<div class="container">
+    <div class="row">
+        @foreach (DailyWeather dailyWeather in Model)
+        {
+            <div class="col-md-3">
+                <div class="row">
+                    @dailyWeather.Date.DayOfWeek, @dailyWeather.Date.ToShortDateString()
+                </div>
+                <div class="row">
+                    Temp min: @dailyWeather.TemperatureMin deg C
+                </div>
+                <div class="row">
+                    Temp max: @dailyWeather.TemperatureMax deg C
+                </div>
+                <div class="row">
+                    @dailyWeather.Description
+                </div>
+                <div class="row">
+                    <img src="http://openweathermap.org/img/w/@(dailyWeather.Icon).png" alt="@dailyWeather.Icon">
+                </div>
+            </div>
+        }
+    </div>
+</div>
