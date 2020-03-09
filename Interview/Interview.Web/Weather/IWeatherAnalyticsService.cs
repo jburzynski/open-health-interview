@@ -6,6 +6,6 @@ namespace Interview.Web.Weather
 {
     public interface IWeatherAnalyticsService
     {
-        IEnumerable<DailyWeather> GetDailyWeather(IEnumerable<WeatherPointDto> points);
+        IEnumerable<DailyWeather> GetDailyWeather(IEnumerable<WeatherPointDto> points, int dayLimit);
     }
 }

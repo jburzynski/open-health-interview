@@ -14,8 +14,9 @@ namespace Interview.Web.Weather
             _weatherDataService = weatherDataService;
         }
 
-        public IEnumerable<DailyWeather> GetDailyWeather(IEnumerable<WeatherPointDto> points) =>
+        public IEnumerable<DailyWeather> GetDailyWeather(IEnumerable<WeatherPointDto> points, int dayLimit) =>
             points.GroupBy(x => x.DateTime.Date)
+                .Take(dayLimit)
                 .Select(g => new DailyWeather
                 {
                     Date = g.Key,

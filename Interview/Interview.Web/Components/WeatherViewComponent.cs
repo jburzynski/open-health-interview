@@ -22,7 +22,7 @@ namespace Interview.Web.Components
         public async Task<IViewComponentResult> InvokeAsync(string location)
         {
             List<WeatherPointDto> weatherPoints = (await _weatherDataService.GetWeatherDataAsync(location)).ToList();
-            List<DailyWeather> dailyWeathers = _weatherAnalyticsService.GetDailyWeather(weatherPoints).ToList();
+            List<DailyWeather> dailyWeathers = _weatherAnalyticsService.GetDailyWeather(weatherPoints, 3).ToList();
             
             return View(dailyWeathers);
         }
